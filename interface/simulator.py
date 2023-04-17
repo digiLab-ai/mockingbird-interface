@@ -1,10 +1,11 @@
 from abc import ABC, abstractmethod
+from typing import List, Dict
 
 
 class Simulator(ABC):
     @classmethod
     @abstractmethod
-    def list_scenario_categories(cls) -> list[str]:
+    def list_scenario_categories(cls) -> List[str]:
         """
         List the available scenario categories.
         """
@@ -12,7 +13,7 @@ class Simulator(ABC):
 
     @classmethod
     @abstractmethod
-    def list_scenarios(cls, category: str) -> list[str]:
+    def list_scenarios(cls, category: str) -> List[str]:
         """
         List the scenarios in a given category.
         """
@@ -20,7 +21,7 @@ class Simulator(ABC):
 
     @classmethod
     @abstractmethod
-    def scenario_info(cls, category: str, scenario_name: str) -> dict:
+    def scenario_info(cls, category: str, scenario_name: str) -> Dict:
         """
         Get information about a specific scenario.
         """
@@ -41,28 +42,28 @@ class Simulator(ABC):
         pass
 
     @abstractmethod
-    def environment(self) -> dict:
+    def environment(self) -> Dict:
         """
         Get the current environment state.
         """
         pass
 
     @abstractmethod
-    def static_data(self) -> dict:
+    def static_data(self) -> Dict:
         """
         Get the static scenario data.
         """
         pass
 
     @abstractmethod
-    def dynamic_data(self) -> dict:
+    def dynamic_data(self) -> Dict:
         """
         Get the volatile scenario data.
         """
         pass
 
     @abstractmethod
-    def action(self, actions: list[dict]) -> dict:
+    def action(self, actions: List[Dict]) -> Dict:
         """
         Send an action.
         """
