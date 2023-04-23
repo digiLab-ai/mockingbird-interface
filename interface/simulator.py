@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from typing import List, Dict
+from typing import Dict, List, Optional
 
 
 class Simulator(ABC):
@@ -42,21 +42,21 @@ class Simulator(ABC):
         pass
 
     @abstractmethod
-    def environment(self) -> Dict:
+    def environment(self, sector_id: Optional[str]) -> Dict:
         """
         Get the current environment state.
         """
         pass
 
     @abstractmethod
-    def static_data(self) -> Dict:
+    def static_data(self, sector_id: Optional[str]) -> Dict:
         """
         Get the static scenario data.
         """
         pass
 
     @abstractmethod
-    def dynamic_data(self) -> Dict:
+    def dynamic_data(self, sector_id: Optional[str]) -> Dict:
         """
         Get the volatile scenario data.
         """
