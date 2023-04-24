@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "interface"
-version = "1.0.3"
+version = "1.0.4"
 description = "Air traffic control interface"
 authors = ["Freddy Wordingham <freddy@digilab.co.uk>"]
 
