@@ -70,7 +70,7 @@ class Simulator(ABC):
         pass
 
     @abstractmethod
-    def update_aircraft_bay(self, callsign: str, bay_id: str) -> bool:
+    def update_aircraft_bay(self, sector_id: str, callsign: str, bay_id: str) -> bool:
         """
         Move an aircraft to a different bay.
         """
