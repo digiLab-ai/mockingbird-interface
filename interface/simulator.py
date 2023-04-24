@@ -63,8 +63,15 @@ class Simulator(ABC):
         pass
 
     @abstractmethod
-    def action(self, actions: List[Dict]) -> Dict:
+    def action(self, actions: List[Dict]) -> bool:
         """
         Send an action.
+        """
+        pass
+
+    @abstractmethod
+    def update_aircraft_bay(self, callsign: str, bay_id: str) -> bool:
+        """
+        Move an aircraft to a different bay.
         """
         pass
